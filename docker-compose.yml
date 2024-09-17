@@ -2,9 +2,9 @@ version: '3'
 services:
   websocket:
     build:
-      context: ./websocket  # Указываем путь к папке с Dockerfile для вебсокета
+      context: ./websocket
     container_name: websocket_container
     restart: always
     volumes:
-      - ./ws_data:/app/ws_data  # Монтируем папку ws_data для хранения данных
-    command: bash start.sh  # Запускаем bash-скрипт для старта вебсокета
+      - ./ws_data:/app/ws_data
+    command: bash start.sh
