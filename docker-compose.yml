@@ -8,3 +8,12 @@ services:
     volumes:
       - ./ws_data:/app/ws_data
     command: bash start.sh
+
+  model:
+    build:
+      context: ./model
+    container_name: model_container
+    restart: always
+    volumes:
+      - ./ws_data:/app/ws_data
+    command: bash start.sh
