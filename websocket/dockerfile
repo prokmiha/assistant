@@ -1,20 +1,13 @@
-# Используем официальный образ Python
 FROM python:3.11-slim
 
-# Устанавливаем рабочую директорию
 WORKDIR /app
 
-# Копируем только файл зависимостей, чтобы не пересобирать их при изменениях в коде
 COPY requirements.txt /app/requirements.txt
 
-# Устанавливаем зависимости
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Копируем остальной код
 COPY . /app
 
-# Делаем start.sh исполняемым
 RUN chmod +x start.sh
 
-# Запуск bash-скрипта для старта приложения
 CMD ["bash", "start.sh"]
