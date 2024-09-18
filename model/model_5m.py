@@ -12,10 +12,13 @@ class Model5m:
         self.model_path = "./models/model_5m.keras"  # Используем формат .keras
         self.ticker_list = ["BTCUSDT", "ETHUSDT", "BNBUSDT", "ADAUSDT", "SOLUSDT"]
         
-        if not os.path.exists('./logs'):
-            os.makedirs('./logs')
+        if not os.path.exists('./model/models'):
+            os.makedirs('./models')
         
-        if not os.path.exists('./results'):
+        if not os.path.exists('./model/results'):
+            os.makedirs('./results')        
+            
+        if not os.path.exists('./model/results'):
             os.makedirs('./results')
 
     def build_model(self):
